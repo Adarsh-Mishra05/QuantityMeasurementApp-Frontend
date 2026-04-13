@@ -1,0 +1,329 @@
+/* ── Navbar ────────────────────────────────────────────────────────────────── */
+.navbar {
+  background: #4f5bd5;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 60px;
+}
+.navbar h2 { margin: 0; font-size: 18px; font-weight: 600; }
+.nav-actions { display: flex; gap: 10px; }
+.nav-btn {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.6);
+  color: #fff;
+  border-radius: 8px;
+  padding: 6px 16px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.15s;
+}
+.nav-btn:hover { background: rgba(255,255,255,0.15); }
+.nav-btn.logout {
+  background: #fff;
+  color: #4f5bd5;
+  font-weight: 600;
+  border: none;
+}
+ 
+/* ── Page layout ───────────────────────────────────────────────────────────── */
+.page {
+  min-height: calc(100vh - 60px);
+  background: #f4f6fb;
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px;
+}
+ 
+/* ── Card ──────────────────────────────────────────────────────────────────── */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+  max-width: 760px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+ 
+/* ── Step labels ───────────────────────────────────────────────────────────── */
+.step-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #888;
+  margin: 0 0 12px;
+}
+ 
+/* ── Type grid ─────────────────────────────────────────────────────────────── */
+.type-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.type-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 12px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  transition: border-color 0.15s, background 0.15s;
+}
+.type-btn:hover { border-color: #4f5bd5; }
+.type-btn.active {
+  border-color: #4f5bd5;
+  background: #f0f1ff;
+  color: #4f5bd5;
+}
+.type-icon { font-size: 24px; }
+ 
+/* ── Action tabs ───────────────────────────────────────────────────────────── */
+.action-tabs {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+.action-tabs button {
+  flex: 1;
+  padding: 11px 0;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
+  transition: background 0.15s, color 0.15s;
+  border-right: 1px solid #e0e0e0;
+}
+.action-tabs button:last-child { border-right: none; }
+.action-tabs button.active {
+  background: #4f5bd5;
+  color: #fff;
+}
+ 
+/* ── Arithmetic op selector ────────────────────────────────────────────────── */
+.op-selector {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.op-selector button {
+  padding: 7px 18px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  color: #555;
+  transition: all 0.15s;
+}
+.op-selector button.active {
+  border-color: #4f5bd5;
+  background: #4f5bd5;
+  color: #fff;
+}
+ 
+/* ── Input row ─────────────────────────────────────────────────────────────── */
+.inputs-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.input-block { flex: 1; }
+.input-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: #888;
+  margin: 0 0 8px;
+}
+.value-input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 28px;
+  font-weight: 700;
+  border: none;
+  border-bottom: 2px solid #e0e0e0;
+  padding: 4px 0;
+  outline: none;
+  color: #222;
+  margin-bottom: 10px;
+  background: transparent;
+}
+.value-input:focus { border-bottom-color: #4f5bd5; }
+.unit-select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #444;
+  background: #fff;
+  cursor: pointer;
+  outline: none;
+}
+.equals-sign, .op-symbol {
+  font-size: 22px;
+  font-weight: 700;
+  color: #aaa;
+  padding-top: 28px;
+}
+ 
+/* ── Target unit ───────────────────────────────────────────────────────────── */
+.target-row {
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: #555;
+}
+.target-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+ 
+/* ── Calculate button ──────────────────────────────────────────────────────── */
+.calc-btn {
+  width: 100%;
+  padding: 15px 0;
+  background: #4f5bd5;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  margin-top: 8px;
+}
+.calc-btn:hover   { opacity: 0.9; }
+.calc-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+ 
+/* ── Result panel ──────────────────────────────────────────────────────────── */
+.result-panel {
+  margin-top: 24px;
+  border-left: 4px solid #4f5bd5;
+  padding: 16px 20px;
+  background: #f7f8ff;
+  border-radius: 0 10px 10px 0;
+}
+.result-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #888;
+  margin: 0 0 6px;
+}
+.result-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #4f5bd5;
+  margin: 0;
+}
+ 
+/* ── Error panel ───────────────────────────────────────────────────────────── */
+.error-panel {
+  margin-top: 20px;
+  padding: 14px 18px;
+  background: #fff0f0;
+  border-left: 4px solid #e53935;
+  border-radius: 0 10px 10px 0;
+  color: #c62828;
+  font-size: 14px;
+}
+ 
+/* ── Guest nudge ───────────────────────────────────────────────────────────── */
+.guest-nudge {
+  margin-top: 24px;
+  padding: 14px 18px;
+  background: #f0f4ff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #4f5bd5;
+}
+.guest-nudge button {
+  padding: 7px 20px;
+  background: #4f5bd5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+ 
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .type-grid { grid-template-columns: repeat(2, 1fr); }
+  .inputs-row { flex-direction: column; }
+  .equals-sign, .op-symbol { padding-top: 0; }
+}
+ 
+/* Comparison result is a sentence — smaller font than numeric result */
+.result-sentence {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  line-height: 1.4;
+}
+ 
+.result-context {
+  font-size: 12px;
+  color: #888;
+  margin: 6px 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

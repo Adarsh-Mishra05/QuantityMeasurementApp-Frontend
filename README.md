@@ -1,2 +1,2 @@
 # QuantityMeasurementApp-Frontend
-The Frontend Part of  QuantityMeasurementApp with TypeScript and Angular.
+The Frontend of My QuantityMeasurementApp with typeScript and angular.
