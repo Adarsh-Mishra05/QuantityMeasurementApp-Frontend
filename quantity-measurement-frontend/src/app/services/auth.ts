@@ -3,11 +3,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { environment } from '../environments/environment';
  
 @Injectable({ providedIn: 'root' })
 export class AuthService {
  
-  private readonly API     = 'http://localhost:8080';
+private readonly API = environment.apiUrl;
   private readonly TOKEN_K = 'jwt_token';
  
   private loggedIn$ = new BehaviorSubject<boolean>(this.hasToken());

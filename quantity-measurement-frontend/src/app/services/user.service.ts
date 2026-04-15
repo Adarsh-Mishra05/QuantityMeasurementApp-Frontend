@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../environments/environment.prod';
  
 export interface UserProfile {
   id: number;
@@ -19,8 +20,7 @@ export interface UpdateProfileRequest {
  
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  private readonly API = 'http://localhost:8080/api/user';
- 
+private readonly API = `${environment.apiUrl}/api/user`; 
   constructor(private http: HttpClient) {}
  
   // GET /api/user/me — requires JWT (jwt-interceptor adds it automatically)
