@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../environments/environment.prod';
- 
+import {environment} from '../environments/environment';
 // Mirrors QuantityDTO.java exactly
 export interface QuantityDTO {
   value: number;
@@ -52,7 +51,8 @@ export const TYPE_LABELS: Record<string, string> = {
 @Injectable({ providedIn: 'root' })
 export class MeasurementService {
  
-private readonly BASE = `${environment.apiUrl}/api/user/quantities`; 
+  private readonly BASE = '{environment.apiUrl}/api/user/quantities';
+ 
   constructor(private http: HttpClient) {}
  
   compare(input: QuantityInputDTO): Observable<MeasurementResult> {
@@ -100,7 +100,6 @@ private readonly BASE = `${environment.apiUrl}/api/user/quantities`;
   }
 }
  
-
 
 
 
