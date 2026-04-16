@@ -51,7 +51,7 @@ export const TYPE_LABELS: Record<string, string> = {
 @Injectable({ providedIn: 'root' })
 export class MeasurementService {
  
-  private readonly BASE = '{environment.apiUrl}/api/user/quantities';
+  private readonly BASE = '${environment.apiUrl}/api/user/quantities';
  
   constructor(private http: HttpClient) {}
  
